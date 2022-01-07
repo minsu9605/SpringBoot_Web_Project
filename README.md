@@ -73,8 +73,8 @@ Spring Boot의 MVC패턴을 기반으로 만든 중고거래 계시판입니다.
 	- 공지사항게시판은 관리자만 작성이 가능하며 일반 회원은 해당 게시물의 읽기 권한만 주어집니다.
  # 프로젝트 분리
  해당 프로젝트는 프런트와 백을 한 프로젝트에 구현하였습니다. RestAPI를 학습하기 위해 해당 프로젝트를 다음과 같이 분리하였습니다.
- [프로젝트 분리 API서버](https://github.com/minsu9605/SpringBoot_webProject_Backend) 
+ [프로젝트 분리 API서버](https://github.com/minsu9605/SpringBoot_webProject_Backend),  
   [프로젝트 분리 Front](https://github.com/minsu9605/SpringBoot_webProject_Frontend)
   # 개인 블로그
-  해당 프로젝트는 아래 블로그에 정리 하였습니다.
+  해당 프로젝트는 아래 블로그에 정리 하였습니다. 
   [개인 기술 블로그](https://velog.io/@alstn_dev?tag=%EC%9D%B8%ED%84%B4%EC%8B%AD) 
