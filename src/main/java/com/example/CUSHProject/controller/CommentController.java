@@ -1,6 +1,6 @@
 package com.example.CUSHProject.controller;
 
-import com.example.CUSHProject.service.CommentService;
+import com.example.CUSHProject.board.service.CommentService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;

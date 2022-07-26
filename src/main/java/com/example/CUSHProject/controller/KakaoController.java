@@ -1,9 +1,9 @@
 package com.example.CUSHProject.controller;
 
 
-import com.example.CUSHProject.dto.OAuthToken;
-import com.example.CUSHProject.repository.MemberRepository;
-import com.example.CUSHProject.service.KakaoService;
+import com.example.CUSHProject.kakao.dto.OAuthToken;
+import com.example.CUSHProject.member.repository.MemberRepository;
+import com.example.CUSHProject.kakao.service.KakaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
