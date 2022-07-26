@@ -6,11 +6,11 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.List;
 
 @Controller
 @AllArgsConstructor
@@ -21,30 +21,6 @@ public class NoticeBoardController {
     @GetMapping("/notice/list")
     public String noticeList() {
         return "notice/noticelist";
-    }
-
-    /*공지사항 api*/
-    @GetMapping("/api/notice/list/table")
-    @ResponseBody
-    public HashMap<String, Object> getNoticeList( @RequestParam(required = false) int page,
-                                                  @RequestParam(required = false) int perPage,
-                                                  @RequestParam(required = false) String searchType,
-                                                  @RequestParam(required = false, defaultValue = "") String keyword){
-        HashMap<String, Object> objectMap = new HashMap<>();
-        HashMap<String, Object> dataMap = new HashMap<>();
-        HashMap<String, Object> paginationMap = new HashMap<>();
-
-
-        int total = noticeBoardService.getTotalSize(searchType,keyword);
-        List<NoticeBoardDto> noticeBoardDtoList = noticeBoardService.getNoticeBoardList(page, perPage, searchType, keyword);
-
-        objectMap.put("result", true);
-        objectMap.put("data", dataMap);
-        dataMap.put("contents", noticeBoardDtoList);
-        dataMap.put("pagination", paginationMap);
-        paginationMap.put("page", page);
-        paginationMap.put("totalCount", total);
-        return objectMap;
     }
 
     //글쓰기
@@ -84,12 +60,6 @@ public class NoticeBoardController {
     public String noticeBoardModify(NoticeBoardDto noticeBoardDto, Authentication authentication){
         noticeBoardService.boardModifySave(noticeBoardDto, authentication.getName());
         return "redirect:/notice/list";
-    }
-
-    @ResponseBody
-    @DeleteMapping("/api/notice/delete")
-    public void noticeBoardDelete(@RequestParam(required = false)Long id) {
-        noticeBoardService.noticeBoardDelete(id);
     }
 
 }

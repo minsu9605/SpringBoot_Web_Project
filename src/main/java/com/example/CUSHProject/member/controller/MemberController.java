@@ -8,12 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 
 @Controller
 @AllArgsConstructor
@@ -80,13 +77,6 @@ public class MemberController {
     @GetMapping("/account/password")
     public String modifyPassword() {
         return "account/password";
-    }
-
-    //패스워드 확인
-    @ResponseBody
-    @GetMapping("/api/pwCheck")
-    public HashMap<String, Object> pwCheck(@RequestParam(required = false) String original_Pw, Authentication authentication) {
-        return memberService.pwCheck(authentication,original_Pw);
     }
 
     //패스워드 업데이트
