@@ -1,4 +1,4 @@
-package com.example.CUSHProject.controller;
+package com.example.CUSHProject.kakao.controller;
 
 
 import com.example.CUSHProject.kakao.dto.OAuthToken;
